@@ -1,0 +1,35 @@
+{
+  "name": "try_postcss",
+  "version": "0.0.1",
+  "description": "Try postcss features in gulp workflow",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dongtong/try_postcss.git"
+  },
+  "keywords": [
+    "postcss",
+    "css-precessor",
+    "gulp"
+  ],
+  "author": "dongtong",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dongtong/try_postcss/issues"
+  },
+  "homepage": "https://github.com/dongtong/try_postcss#readme",
+  "dependencies": {
+    "postcss": "^5.0.21"
+  },
+  "devDependencies": {
+    "autoprefixer": "^6.3.6",
+    "browser-sync": "^2.12.10",
+    "cssnext": "^1.8.4",
+    "gulp": "^3.9.1",
+    "gulp-postcss": "^6.1.1",
+    "precss": "^1.4.0"
+  }
+}

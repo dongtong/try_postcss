@@ -1,0 +1,22 @@
+/* autoprefixer */
+
+.autoprefixer {
+	display: flex;
+}
+
+/* cssnext */
+
+.cssnext {
+	background: color(red alpha(-10%));
+}
+
+/* precss */
+
+.precss {
+	@if 1 < 2 {
+		background: green;
+	}
+	@else {
+		background: blue;
+	}
+}
