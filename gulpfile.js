@@ -7,6 +7,7 @@ var gulp = require('gulp'),                               // gulp核心
     cssnext = require('cssnext'),                         // 使用CSS未来的语法
     precss = require('precss'),                           // 像Sass的函数
     postcss = require('gulp-postcss'),                    // postcss 转化器
+    cssnano = require('cssnano');                         // 压缩css
     browserSync = require('browser-sync');                // 注入代码到所有文件中(https://browsersync.io/docs/options/)
 
 /*******************************************************************************************
@@ -31,7 +32,8 @@ gulp.task('postcss', function () {
             browsers: ['> 5%', 'last 5 versions', 'Firefox >= 20', 'IE >= 7']
         }),    
         cssnext,
-        precss
+        precss,
+        cssnano()
     ];
     return gulp.src(src.css)
                .pipe(postcss(processors))
