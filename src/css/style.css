@@ -2,6 +2,13 @@
 	--mainColor: red;
 };
 
+$primaryColor: blue;
+
+@define-mixin small-center-block {
+	margin: 0 auto;
+	width: 56px;
+}
+
 /* autoprefixer */
 
 .autoprefixer {
@@ -31,4 +38,10 @@ body {
 	transform: translateX(10px);
 	background: var(--mainColor);
 	color: color(red alpha(-10%));
+	h1 {
+		color: $primaryColor;
+	}
+	.s-block {
+		@mixin small-center-block;
+	}
 }

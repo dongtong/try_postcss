@@ -33,3 +33,12 @@ body {
 	background: red;
 	color: rgba(255, 0, 0, 0.9);
 }
+
+body h1 {
+	color: blue;
+}
+
+body .s-block {
+	margin: 0 auto;
+	width: 56px;
+}
