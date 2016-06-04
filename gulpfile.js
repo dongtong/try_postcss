@@ -7,6 +7,7 @@ var gulp = require('gulp'),                               // gulp核心
     cssnext = require('cssnext'),                         // 使用CSS未来的语法
     precss = require('precss'),                           // 像Sass的函数
     postcss = require('gulp-postcss'),                    // postcss 转化器
+    sass = require('gulp-sass'),
     cssnano = require('cssnano');                         // 压缩css
     browserSync = require('browser-sync');                // 注入代码到所有文件中(https://browsersync.io/docs/options/)
 
@@ -15,7 +16,8 @@ var gulp = require('gulp'),                               // gulp核心
 *******************************************************************************************/
 
 var src = {
-    css: 'src/css/*.css'
+    css: 'src/css/*.css',
+    scss: 'src/sass/*.scss'
 };
 
 var dest = {
@@ -36,6 +38,25 @@ gulp.task('postcss', function () {
         cssnano()
     ];
     return gulp.src(src.css)
+               .pipe(postcss(processors))
+               .pipe(gulp.dest(dest.css));
+});
+
+/*******************************************************************************************
+  SASS Task
+*******************************************************************************************/
+
+gulp.task('sass', function () {
+    var processors = [                                  // https://github.com/ai/browserslist
+        autoprefixer({                                  // 默认是 > 1%, last 2 versions, firefox ESR
+            browsers: ['> 5%', 'last 5 versions', 'Firefox >= 20', 'IE >= 7']
+        }),    
+        cssnext,
+        precss,
+        cssnano()
+    ];
+    return gulp.src(src.scss)
+               .pipe(sass().on('error', sass.logError))
                .pipe(postcss(processors))
                .pipe(gulp.dest(dest.css));
 });
