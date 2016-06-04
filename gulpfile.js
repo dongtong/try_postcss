@@ -4,7 +4,7 @@
 
 var gulp = require('gulp'),                               // gulp核心
     autoprefixer = require('autoprefixer'),               // 处理浏览器私有前缀
-    cssnext = require('cssnext'),                         // 使用CSS未来的语法
+    cssnext = require('cssnext'),                         // 使用CSS未来的语法(http://cssnext.io/features)
     precss = require('precss'),                           // 像Sass的函数
     postcss = require('gulp-postcss'),                    // postcss 转化器
     sass = require('gulp-sass'),
@@ -35,7 +35,7 @@ gulp.task('postcss', function () {
         }),    
         cssnext,
         precss,
-        cssnano()
+        //cssnano()
     ];
     return gulp.src(src.css)
                .pipe(postcss(processors))

@@ -1,3 +1,7 @@
+:root {
+	--mainColor: red;
+};
+
 /* autoprefixer */
 
 .autoprefixer {
@@ -19,4 +23,12 @@
 	@else {
 		background: blue;
 	}
+}
+
+body {
+	display: flex;
+	border-radius: 50%;
+	transform: translateX(10px);
+	background: var(--mainColor);
+	color: color(red alpha(-10%));
 }
